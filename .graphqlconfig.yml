@@ -1,0 +1,16 @@
+projects:
+  marvelhelper:
+    schemaPath: app/src/main/graphql/schema.json
+    includes:
+      - app/src/main/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: ''
+        generatedFileName: ''
+        docsFilePath: app/src/main/graphql/com/amazonaws/amplify/generated/graphql
+        graphQLApiId: p3w2ek3l7rbknokoy25oskgo2m
+      endpoints:
+        prod: >-
+          https://cawwuoihinfvdfsczukcviz5se.appsync-api.eu-west-2.amazonaws.com/graphql

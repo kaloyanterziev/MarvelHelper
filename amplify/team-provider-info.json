@@ -1,0 +1,14 @@
+{
+    "android": {
+        "awscloudformation": {
+            "AuthRoleName": "marvelhelper-20190330153223-authRole",
+            "UnauthRoleArn": "arn:aws:iam::543634943170:role/marvelhelper-20190330153223-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::543634943170:role/marvelhelper-20190330153223-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "marvelhelper-20190330153223-deployment",
+            "UnauthRoleName": "marvelhelper-20190330153223-unauthRole",
+            "StackName": "marvelhelper-20190330153223",
+            "StackId": "arn:aws:cloudformation:eu-west-2:543634943170:stack/marvelhelper-20190330153223/03ee1c80-5301-11e9-99a5-0225e826733a"
+        }
+    }
+}
