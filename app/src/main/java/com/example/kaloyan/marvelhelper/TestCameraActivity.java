@@ -64,7 +64,6 @@ public class TestCameraActivity extends AppCompatActivity {
         capture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //mCamera.takePicture(null, null, mPicture);
                 takePhoto();
             }
         });
@@ -72,13 +71,6 @@ public class TestCameraActivity extends AppCompatActivity {
         Camera.Parameters params = mCamera.getParameters();
         params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
         mCamera.setParameters(params);
-//        mAWSAppSyncClient = AWSAppSyncClient.builder()
-//                .context(getApplicationContext())
-//                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
-//                .build();
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//
-//        StrictMode.setThreadPolicy(policy);
 
     }
 
@@ -120,7 +112,6 @@ public class TestCameraActivity extends AppCompatActivity {
     private void takePhoto() {
         Camera.PictureCallback pictureCB = new Camera.PictureCallback() {
             public void onPictureTaken(byte[] data, Camera cam) {
-                //Pair<Float, Float> similarityAxis =  CompareFaces.analyzeImage(data, getApplicationContext());
 
 
                 setContentView(R.layout.loading_activity);
@@ -136,21 +127,6 @@ public class TestCameraActivity extends AppCompatActivity {
                 AmazonRekognition rekognitionClient = new AmazonRekognitionClient(credentials);
                 // TODO: Regions
                 rekognitionClient.setRegion(Region.getRegion(Regions.AP_SOUTHEAST_2));
-
-
-//        AWSCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
-//                getActivity().getApplicationContext(),
-//                "COGNITO_POOL_ID",
-//                Regions.EU_WEST_2
-//        );
-//          AmazonRekognition client = new AmazonRekognitionClient(credentialsProvider);
-
-
-                //preview.setCamera(null);
-//                if (cam != null) {
-//                    cam.release();
-//                    cam = null;
-//                }
 
                 //Load source and target images and create input parameters
                 Drawable myIcon = getResources().getDrawable( R.drawable.a );
