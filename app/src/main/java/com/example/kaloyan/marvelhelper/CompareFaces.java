@@ -1,5 +1,6 @@
 //Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+// Modified 2019 Kaloyan Terziev
 
 package com.example.kaloyan.marvelhelper;
 
@@ -29,7 +30,6 @@ public class CompareFaces{
 
     public static Pair<Float, Float> analyzeImage(byte[] data, Context context) {
         Float similarityThreshold = 70F;
-        //String targetImage = "target.jpg";
         ByteBuffer sourceImageBytes = null;
         ByteBuffer targetImageBytes=null;
 
@@ -38,15 +38,6 @@ public class CompareFaces{
         AmazonRekognition rekognitionClient = new AmazonRekognitionClient(credentials);
         // TODO: Regions
         rekognitionClient.setRegion(Region.getRegion(Regions.EU_WEST_2));
-
-
-//        AWSCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
-//                getActivity().getApplicationContext(),
-//                "COGNITO_POOL_ID",
-//                Regions.EU_WEST_2
-//        );
-//          AmazonRekognition client = new AmazonRekognitionClient(credentialsProvider);
-
 
         //Load source and target images and create input parameter
         //SOURCE
@@ -85,23 +76,6 @@ public class CompareFaces{
             return new Pair<Float, Float>(-1f, -1f);
 
         return new Pair<Float, Float>(faceDetails.get(0).getSimilarity(), faceDetails.get(0).getFace().getBoundingBox().getLeft() );
-
-        /*
-        for (CompareFacesMatch match: faceDetails){
-            ComparedFace face= match.getFace();
-            BoundingBox position = face.getBoundingBox();
-
-            //System.out.println("Face at " + position.getLeft().toString()
-                    + " " + position.getTop()
-                    + " matches with " + match.getSimilarity().toString()
-                    + "% confidence.");
-
-        }
-        List<ComparedFace> uncompared = compareFacesResult.getUnmatchedFaces();
-
-        System.out.println("There was " + uncompared.size()
-                + " face(s) that did not match");
-        */
 
     }
 }
