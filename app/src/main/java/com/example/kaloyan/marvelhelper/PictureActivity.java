@@ -85,10 +85,6 @@ public class PictureActivity extends AppCompatActivity {
                 description = "Despite super spy Natasha Romanoff’s checkered past, she’s become one of S.H.I.E.L.D.’s most deadly assassins and a frequent member of the Avengers.";
                 myIcon = getResources().getDrawable( R.drawable.blackwidow);
             }
-            //str += "\n";
-//            str += "Face at " + position.getLeft().toString()
-//                    + " matches with " + match.getSimilarity().toString()
-//                    + "% confidence.\n";
 
         }
 
@@ -104,8 +100,5 @@ public class PictureActivity extends AppCompatActivity {
             ImageView img = findViewById(R.id.imageViewHero);
             img.setImageBitmap(bitmap);
         }
-//        imageView = findViewById(R.id.img);
-//
-//        imageView.setImageBitmap(TestCameraActivity.bitmap);
     }
 }
